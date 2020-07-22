@@ -1,0 +1,9 @@
+import os
+import sys
+
+env=DefaultEnvironment().Clone()
+BIN_DIR=os.environ['BIN_DIR'];
+
+env.Program(os.path.join(BIN_DIR, 'csv_view'), ['csv_view.c']);
+env.Program(os.path.join(BIN_DIR, 'csv_view_remove'), ['csv_view_remove.c']);
+env.Program(os.path.join(BIN_DIR, 'csv_view_checkable'), ['csv_view_checkable.c']);
