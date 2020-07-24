@@ -58,6 +58,7 @@ static ret_t table_client_bind(void *widget, binding_context_t *ctx) {
   table_client_ensure_children(table_client);
   WIDGET_FOR_EACH_CHILD_BEGIN(table_client, iter, i)
     if(i < rows) {
+      view_model_array_set_cursor(ctx->view_model, i);
       binding_context_bind(BINDING_CONTEXT(ctx), iter);
     }
   WIDGET_FOR_EACH_CHILD_END();
