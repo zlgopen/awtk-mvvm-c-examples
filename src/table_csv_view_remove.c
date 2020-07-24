@@ -20,10 +20,12 @@
  */
 
 #include "../res/assets_default.inc"
+
 #include "awtk.h"
-#include "csv_file_object.h"
-#include "mvvm/base/view_model_array_object_wrapper.h"
 #include "mvvm/mvvm.h"
+#include "csv_file_object.h"
+#include "table_view_register.h"
+#include "table_client_custom_binder.h"
 
 view_model_t *scores_view_model_create(navigator_request_t *req) {
   csv_file_t *csv = csv_file_create("data/scores.csv", ',');
@@ -33,9 +35,11 @@ view_model_t *scores_view_model_create(navigator_request_t *req) {
 }
 
 ret_t application_init(void) {
+  table_view_register();
+  table_client_custom_binder_register();
   view_model_factory_register("scores", scores_view_model_create);
 
-  return navigator_to("csv_view_remove");
+  return navigator_to("table_view_remove");
 }
 
 #include "mvvm/mvvm.h"

@@ -19,15 +19,15 @@
  *
  */
 
-#include "awtk.h"
-#include "mvvm/mvvm.h"
-#include "csv_file_object.h"
 #include "../res/assets_default.inc"
+#include "awtk.h"
+#include "csv_file_object.h"
 #include "mvvm/base/view_model_array_object_wrapper.h"
+#include "mvvm/mvvm.h"
 
-view_model_t* scores_view_model_create(navigator_request_t* req) {
-  csv_file_t* csv = csv_file_create("data/scores.csv", ',');
-  object_t* obj = csv_file_object_create(csv);
+view_model_t *scores_view_model_create(navigator_request_t *req) {
+  csv_file_t *csv = csv_file_create("data/scores.csv", ',');
+  object_t *obj = csv_file_object_create(csv);
 
   return view_model_array_object_wrapper_create(obj);
 }
