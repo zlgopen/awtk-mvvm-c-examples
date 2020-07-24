@@ -25,6 +25,7 @@ os.environ['LIB_DIR'] = APP_LIB_DIR;
 os.environ['APP_SRC'] = APP_SRC_DIR;
 
 APP_CFLAGS = ''
+APP_LINKFLAGS = ''
 APP_CCFLAGS = APP_CFLAGS
 
 MVVM_ROOT = os.path.normpath(os.path.join(APP_ROOT, '../awtk-mvvm'))
@@ -70,7 +71,7 @@ if hasattr(awtk, 'CC'):
     AR=awtk.AR,
     STRIP=awtk.STRIP,
     
-    LINKFLAGS = awtk.LINKFLAGS,
+    LINKFLAGS = awtk.LINKFLAGS + APP_LINKFLAGS,
     CFLAGS    = APP_CFLAGS + awtk.CFLAGS, 
     CCFLAGS   = APP_CCFLAGS + awtk.CCFLAGS, 
     LIBS      = APP_LIBS + AWTK_LIBS,
@@ -80,7 +81,7 @@ if hasattr(awtk, 'CC'):
     OS_SUBSYSTEM_WINDOWS=awtk.OS_SUBSYSTEM_WINDOWS)
 else:
   DefaultEnvironment(
-    LINKFLAGS = awtk.LINKFLAGS,
+    LINKFLAGS = awtk.LINKFLAGS + APP_LINKFLAGS,
     CFLAGS    = APP_CFLAGS + awtk.CFLAGS, 
     CCFLAGS   = APP_CCFLAGS + awtk.CCFLAGS, 
     LIBS      = APP_LIBS + AWTK_LIBS,
