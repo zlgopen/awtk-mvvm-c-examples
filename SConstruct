@@ -31,8 +31,9 @@ APP_CCFLAGS = APP_CFLAGS
 MVVM_ROOT = os.path.normpath(os.path.join(APP_ROOT, '../awtk-mvvm'))
 CSV_FILE_ROOT = os.path.normpath(os.path.join(APP_ROOT, '../awtk-csv-file'))
 TABLE_VIEW_ROOT = os.path.normpath(os.path.join(APP_ROOT, '../awtk-widget-table-view'))
+TABLE_VIEW_MVVM_ROOT = os.path.normpath(os.path.join(APP_ROOT, '../awtk-widget-table-view-mvvm'))
 
-APP_LIBS = ['mvvm', 'table_view', 'csv']
+APP_LIBS = ['mvvm', 'table_view', 'table_view_mvvm', 'csv']
 
 APP_CPPPATH = [
   APP_SRC_DIR,
@@ -40,6 +41,7 @@ APP_CPPPATH = [
   os.path.join(APP_SRC_DIR, 'view_models'),
   os.path.join(CSV_FILE_ROOT, 'src'), 
   os.path.join(TABLE_VIEW_ROOT, 'src'), 
+  os.path.join(TABLE_VIEW_MVVM_ROOT, 'src'), 
   os.path.join(MVVM_ROOT, 'src') 
 ]
 
@@ -48,6 +50,7 @@ APP_LIBPATH = [
   os.path.join(APP_ROOT, 'bin'), 
   os.path.join(CSV_FILE_ROOT, 'lib'), 
   os.path.join(TABLE_VIEW_ROOT, 'bin'), 
+  os.path.join(TABLE_VIEW_MVVM_ROOT, 'bin'), 
   os.path.join(MVVM_ROOT, 'lib') ,
   os.path.join(MVVM_ROOT, 'bin') 
 ]
@@ -57,6 +60,7 @@ if awtk.isBuildShared():
   awtk.copySharedLib(AWTK_ROOT, APP_BIN_DIR, 'awtk');
   awtk.copySharedLib(MVVM_ROOT, APP_BIN_DIR, 'mvvm');
   awtk.copySharedLib(TABLE_VIEW_ROOT, APP_BIN_DIR, 'table_view');
+  awtk.copySharedLib(TABLE_VIEW_MVVM_ROOT, APP_BIN_DIR, 'table_view_mvvm');
 
   if awtk.OS_NAME == 'Linux':
     APP_LINKFLAGS += ' -Wl,-rpath=' + APP_BIN_DIR + ' '

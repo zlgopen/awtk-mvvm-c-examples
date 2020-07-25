@@ -34,6 +34,13 @@ git clone https://github.com/zlgopen/awtk-widget-table-view.git
 cd awtk-widget-table-view; scons; cd -
 ```
 
+4. 获取 awtk-widget-table-view-mvvm 并编译
+
+```
+git clone https://github.com/zlgopen/awtk-widget-table-view-mvvm.git
+cd awtk-widget-table-view-mvvm; scons; cd -
+```
+
 ## 运行
 
 1. 生成示例代码的资源
