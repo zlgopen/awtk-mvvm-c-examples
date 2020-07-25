@@ -15,20 +15,19 @@
 /**
  * History:
  * ================================================================
- * 2020-07-22 Li XianJing <xianjimli@hotmail.com> created
+ * 2020-07-24 Li XianJing <xianjimli@hotmail.com> created
  *
  */
-
-#include "../res/assets_default.inc"
 
 #include "awtk.h"
 #include "mvvm/mvvm.h"
 #include "csv_file_object.h"
 #include "table_view_register.h"
+#include "../res/assets_default.inc"
 #include "table_client_custom_binder.h"
 
 view_model_t *scores_view_model_create(navigator_request_t *req) {
-  csv_file_t *csv = csv_file_create("data/scores.csv", ',');
+  csv_file_t *csv = csv_file_create("data/scores_large.csv", ',');
   object_t *obj = csv_file_object_create(csv);
 
   return view_model_array_object_wrapper_create(obj);
@@ -41,8 +40,6 @@ ret_t application_init(void) {
 
   return navigator_to("table_view_remove");
 }
-
-#include "mvvm/mvvm.h"
 
 #define GLOBAL_INIT() mvvm_init()
 #define GLOBAL_EXIT() mvvm_deinit()

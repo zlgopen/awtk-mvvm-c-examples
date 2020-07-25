@@ -2,7 +2,7 @@
 
 mvvm c 语言版本示例。
 
-![](docs/images/ui.png)
+> 本项目中的例子依赖其它一些库，不太适合放到 awtk-mvvm 项目中，因此把它独立出来了。
 
 ## 准备
 
@@ -27,6 +27,13 @@ git clone https://github.com/zlgopen/awtk-csv-file.git
 cd awtk-csv-file; scons; cd -
 ```
 
+4. 获取 awtk-widget-table-view 并编译
+
+```
+git clone https://github.com/zlgopen/awtk-widget-table-view.git
+cd awtk-widget-table-view; scons; cd -
+```
+
 ## 运行
 
 1. 生成示例代码的资源
@@ -49,11 +56,15 @@ scons
 
 * csv 文件查看
 
+![](docs/images/csv_view.png)
+
 ```
 ./bin/csv_view
 ```
 
 * csv 文件查看和删除
+
+![](docs/images/csv_view_remove.png)
 
 ```
 ./bin/csv_view_remove
@@ -61,8 +72,34 @@ scons
 
 * csv 文件查看、删除和导出
 
+![](docs/images/csv_view_checkable.png)
+
 ```
 ./bin/csv_view_checkable
+```
+
+* csv 文件查看 (table view 版本）
+
+![](docs/images/table_csv_view.png)
+
+```
+./bin/table_csv_view
+```
+
+* csv 文件查看和删除 (table view 版本）
+
+![](docs/images/table_csv_view_remove.png)
+
+```
+./bin/table_csv_view_remove
+```
+
+* csv 文件查看、删除和导出 (table view 版本）
+
+![](docs/images/table_csv_view_checkable.png)
+
+```
+./bin/table_csv_view_checkable
 ```
 
 ## 参考

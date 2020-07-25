@@ -19,11 +19,10 @@
  *
  */
 
-#include "../res/assets_default.inc"
 #include "awtk.h"
-#include "csv_file_object.h"
-#include "mvvm/base/view_model_array_object_wrapper.h"
 #include "mvvm/mvvm.h"
+#include "csv_file_object.h"
+#include "../res/assets_default.inc"
 
 view_model_t *scores_view_model_create(navigator_request_t *req) {
   csv_file_t *csv = csv_file_create("data/scores.csv", ',');
@@ -37,8 +36,6 @@ ret_t application_init(void) {
 
   return navigator_to("csv_view");
 }
-
-#include "mvvm/mvvm.h"
 
 #define GLOBAL_INIT() mvvm_init()
 #define GLOBAL_EXIT() mvvm_deinit()

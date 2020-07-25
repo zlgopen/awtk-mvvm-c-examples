@@ -19,11 +19,10 @@
  *
  */
 
-#include "../res/assets_default.inc"
 #include "awtk.h"
-#include "csv_file_object.h"
-#include "mvvm/base/view_model_array_object_wrapper.h"
 #include "mvvm/mvvm.h"
+#include "csv_file_object.h"
+#include "../res/assets_default.inc"
 
 static ret_t scores_view_on_can_exec(void *ctx, event_t *e) {
   csv_file_t *csv = (csv_file_t *)ctx;
@@ -64,8 +63,6 @@ ret_t application_init(void) {
 
   return navigator_to("csv_view_checkable");
 }
-
-#include "mvvm/mvvm.h"
 
 #define GLOBAL_INIT() mvvm_init()
 #define GLOBAL_EXIT() mvvm_deinit()
