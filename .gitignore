@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 *.os
+*.pyc
 # Object files
 *.o
 *.ko

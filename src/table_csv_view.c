@@ -48,6 +48,4 @@ ret_t application_exit() {
   return RET_OK;
 }
 
-#define LCD_WIDTH 800
-#define LCD_HEIGHT 480
 #include "awtk_main.inc"
