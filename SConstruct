@@ -18,6 +18,11 @@ DEPENDS_LIBS = [
     'static_libs': []
   },
   {
+    "root" : '../awtk-widget-slidable-row',
+    'shared_libs': ['slidable_row'],
+    'static_libs': []
+  },
+  {
     "root" : '../awtk-widget-table-view-mvvm',
     'shared_libs': ['table_view_mvvm'],
     'static_libs': []

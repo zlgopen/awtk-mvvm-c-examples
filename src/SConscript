@@ -10,3 +10,4 @@ env.Program(os.path.join(BIN_DIR, 'csv_view_checkable'), ['csv_view_checkable.c'
 env.Program(os.path.join(BIN_DIR, 'table_csv_view'), ['table_csv_view.c']);
 env.Program(os.path.join(BIN_DIR, 'table_csv_view_remove'), ['table_csv_view_remove.c']);
 env.Program(os.path.join(BIN_DIR, 'table_csv_view_checkable'), ['table_csv_view_checkable.c']);
+env.Program(os.path.join(BIN_DIR, 'table_csv_view_slidable'), ['table_csv_view_slidable.c']);
