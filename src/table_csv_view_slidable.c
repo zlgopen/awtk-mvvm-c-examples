@@ -26,7 +26,6 @@
 #include "../res/assets_default.inc"
 #include "table_client_custom_binder.h"
 #include "slidable_row_register.h"
-#include "confirmable_button_register.h"
 
 view_model_t *scores_view_model_create(navigator_request_t *req) {
   csv_file_t *csv = csv_file_create("data/scores_large.csv", ',');
@@ -38,7 +37,6 @@ view_model_t *scores_view_model_create(navigator_request_t *req) {
 ret_t application_init(void) {
   table_view_register();
   slidable_row_register();
-  confirmable_button_register();
   table_client_custom_binder_register();
 
   view_model_factory_register("scores", scores_view_model_create);
