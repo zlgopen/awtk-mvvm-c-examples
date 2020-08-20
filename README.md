@@ -60,11 +60,20 @@ python scripts/update_res.py all
 
 2. 编译
 
+* 编译PC版本
+
 ```
 scons
 ```
-> 注意：
-> 编译前先确认 SConstruct 文件中的 awtk_root 是否为 awtk 所在目录，不是则修改。
+
+* 编译LINUX FB版本
+
+```
+scons LINUX_FB=true
+```
+
+> 完整编译选项请参考[编译选项](https://github.com/zlgopen/awtk-widget-generator/blob/master/docs/build_options.md)
+
 
 3. 运行
 
