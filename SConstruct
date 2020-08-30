@@ -29,8 +29,6 @@ DEPENDS_LIBS = [
   }
 ]
 
-ARGUMENTS['LCD'] = '800_600'
-
 helper = app.Helper(ARGUMENTS);
 helper.set_deps(DEPENDS_LIBS).call(DefaultEnvironment)
 
