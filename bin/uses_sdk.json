@@ -1,9 +1,9 @@
 {
   "compileSDK": {
     "awtk": {
-      "path": "/Users/jim/Share/lab/gui/awtk/awtk",
+      "path": "D:/work/awtk-root/awtk",
       "release_id": "",
-      "nanovg_backend": "GL3"
+      "nanovg_backend": "GLES2"
     }
   }
 }

@@ -34,6 +34,7 @@ view_model_t *scores_view_model_create(navigator_request_t *req) {
 }
 
 ret_t application_init(void) {
+  mvvm_init();
   table_view_register();
   table_client_custom_binder_register();
   view_model_factory_register("scores", scores_view_model_create);
@@ -41,10 +42,8 @@ ret_t application_init(void) {
   return navigator_to("table_view_checkable");
 }
 
-#define GLOBAL_INIT() mvvm_init()
-#define GLOBAL_EXIT() mvvm_deinit()
-
 ret_t application_exit() {
+  mvvm_deinit();
   log_debug("application_exit\n");
   return RET_OK;
 }

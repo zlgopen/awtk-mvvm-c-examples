@@ -32,15 +32,14 @@ view_model_t *scores_view_model_create(navigator_request_t *req) {
 }
 
 ret_t application_init(void) {
+  mvvm_init();
   view_model_factory_register("scores", scores_view_model_create);
 
   return navigator_to("csv_view");
 }
 
-#define GLOBAL_INIT() mvvm_init()
-#define GLOBAL_EXIT() mvvm_deinit()
-
 ret_t application_exit() {
+  mvvm_deinit();
   log_debug("application_exit\n");
   return RET_OK;
 }
