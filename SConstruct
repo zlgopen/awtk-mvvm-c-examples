@@ -34,4 +34,4 @@ helper.set_deps(DEPENDS_LIBS).call(DefaultEnvironment)
 
 CustomWidgetSConscriptFiles = []
 SConscriptFiles = CustomWidgetSConscriptFiles + ['src/SConscript', 'demos/SConscript', 'tests/SConscript']
-SConscript(SConscriptFiles)
+helper.SConscript(SConscriptFiles)
