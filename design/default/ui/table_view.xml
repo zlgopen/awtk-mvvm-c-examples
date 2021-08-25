@@ -9,8 +9,8 @@
       <label w="32%" text="Memo"/>
     </table_header>
 
-    <table_client name="table_client" x="0"  y="30" w="-12" h="-30" row_height="40" v-data:rows="{items}">
-      <table_row w="100%" h="40" children_layout="default(rows=1,cols=0,s=4)">
+    <table_client name="table_client" x="0"  y="30" w="-12" h="-30" row_height="40">
+      <table_row v-for="" w="100%" h="40" children_layout="default(rows=1,cols=0,s=4)">
         <label w="8%" v-data:text="{index}"/>
         <label w="30%" v-data:text="{item.0}"/>
         <label w="10%" v-data:text="{item.1}"/>

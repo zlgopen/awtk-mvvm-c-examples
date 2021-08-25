@@ -21,15 +21,22 @@
 
 #include "awtk.h"
 #include "mvvm/mvvm.h"
-#include "csv_file_object.h"
+#include "csv/csv_file_object.h"
 #include "table_view_register.h"
 #include "../res/assets_default.inc"
 #include "table_client_custom_binder.h"
 #include "slidable_row_register.h"
 
-view_model_t *scores_view_model_create(navigator_request_t *req) {
-  csv_file_t *csv = csv_file_create("data/scores_large.csv", ',');
-  object_t *obj = csv_file_object_create(csv);
+view_model_t* scores_view_model_create(navigator_request_t* req) {
+  char path[MAX_PATH + 1] = {0};
+  fs_get_exe(os_fs(), path);
+  return_value_if_fail(tk_strlen(path) > 0, NULL);
+
+  char* bin = strstr(path, "bin");
+  tk_strcpy(bin, "data\\scores_large.csv");
+
+  csv_file_t* csv = csv_file_create(path, ',');
+  object_t* obj = csv_file_object_create(csv);
 
   return view_model_array_object_wrapper_create(obj);
 }

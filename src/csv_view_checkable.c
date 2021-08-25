@@ -21,12 +21,12 @@
 
 #include "awtk.h"
 #include "mvvm/mvvm.h"
-#include "csv_file_object.h"
+#include "csv/csv_file_object.h"
 #include "../res/assets_default.inc"
 
-static ret_t scores_view_on_can_exec(void *ctx, event_t *e) {
-  csv_file_t *csv = (csv_file_t *)ctx;
-  cmd_exec_event_t *evt = cmd_exec_event_cast(e);
+static ret_t scores_view_on_can_exec(void* ctx, event_t* e) {
+  csv_file_t* csv = (csv_file_t*)ctx;
+  cmd_exec_event_t* evt = cmd_exec_event_cast(e);
 
   if (tk_str_eq(evt->name, "export_checked")) {
     evt->can_exec = csv_file_get_checked_rows(csv) > 0;
@@ -36,9 +36,9 @@ static ret_t scores_view_on_can_exec(void *ctx, event_t *e) {
   return RET_OK;
 }
 
-static ret_t scores_view_on_exec(void *ctx, event_t *e) {
-  csv_file_t *csv = (csv_file_t *)ctx;
-  cmd_exec_event_t *evt = cmd_exec_event_cast(e);
+static ret_t scores_view_on_exec(void* ctx, event_t* e) {
+  csv_file_t* csv = (csv_file_t*)ctx;
+  cmd_exec_event_t* evt = cmd_exec_event_cast(e);
 
   if (tk_str_eq(evt->name, "export_checked")) {
     log_debug("export_checked:%u\n", csv_file_get_checked_rows(csv));
@@ -48,9 +48,16 @@ static ret_t scores_view_on_exec(void *ctx, event_t *e) {
   return RET_OK;
 }
 
-view_model_t *scores_view_model_create(navigator_request_t *req) {
-  csv_file_t *csv = csv_file_create("data/scores.csv", ',');
-  object_t *obj = csv_file_object_create(csv);
+view_model_t* scores_view_model_create(navigator_request_t* req) {
+  char path[MAX_PATH + 1] = {0};
+  fs_get_exe(os_fs(), path);
+  return_value_if_fail(tk_strlen(path) > 0, NULL);
+
+  char* bin = strstr(path, "bin");
+  tk_strcpy(bin, "data\\scores.csv");
+
+  csv_file_t* csv = csv_file_create(path, ',');
+  object_t* obj = csv_file_object_create(csv);
 
   emitter_on(EMITTER(obj), EVT_CMD_CAN_EXEC, scores_view_on_can_exec, csv);
   emitter_on(EMITTER(obj), EVT_CMD_WILL_EXEC, scores_view_on_exec, csv);

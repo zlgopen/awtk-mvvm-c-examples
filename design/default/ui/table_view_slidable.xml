@@ -2,20 +2,20 @@
   <table_view x="10" y="10" w="-20" h="-80">
     <table_header x="0"  y="0" w="-12" h="30" name="title" children_layout="default(rows=1,cols=0,s=4)">
       <label w="8%" text="Index"/>
-      <label w="30%" text="Name"/>
+      <label w="26%" text="Name"/>
       <label w="10%" text="Chinese"/>
       <label w="10%" text="Math"/>
       <label w="10%" text="English"/>
       <label w="24%" text="Memo"/>
-      <label w="8%" text="Action"/>
+      <label w="12%" text="Action"/>
     </table_header>
 
-    <table_client name="table_client" x="0"  y="30" w="-12" h="-30" row_height="40" v-data:rows="{items}">
-      <table_row w="100%" h="40" children_layout="default(rows=1,cols=0,s=4)">
+    <table_client name="table_client" x="0"  y="30" w="-12" h="-30" row_height="40">
+      <table_row v-for="" w="100%" h="40" children_layout="default(rows=1,cols=0,s=4)">
        <slidable_row  w="100%" h="100%">
          <column children_layout="default(rows=1,cols=0,s=4)">
           <label w="8%" h="100%" v-data:text="{index}"/>
-          <label w="30%" h="100%" v-data:text="{item.0}"/>
+          <label w="26%" h="100%" v-data:text="{item.0}"/>
           <label w="10%" h="100%" v-data:text="{item.1}"/>
           <label w="10%" h="100%" v-data:text="{item.2}"/>
           <label w="10%" h="100%" v-data:text="{item.3}"/>

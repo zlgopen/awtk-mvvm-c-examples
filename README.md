@@ -20,28 +20,21 @@ git clone https://github.com/zlgopen/awtk-mvvm.git
 cd awtk-mvvm; scons; cd -
 ```
 
-3. 获取 awtk-csv-file 并编译
-
-```
-git clone https://github.com/zlgopen/awtk-csv-file.git
-cd awtk-csv-file; scons; cd -
-```
-
-4. 获取 awtk-widget-table-view 并编译
+3. 获取 awtk-widget-table-view 并编译
 
 ```
 git clone https://github.com/zlgopen/awtk-widget-table-view.git
 cd awtk-widget-table-view; scons; cd -
 ```
 
-5. 获取 awtk-widget-table-view-mvvm 并编译
+4. 获取 awtk-widget-table-view-mvvm 并编译
 
 ```
 git clone https://github.com/zlgopen/awtk-widget-table-view-mvvm.git
 cd awtk-widget-table-view-mvvm; scons; cd -
 ```
 
-6. 获取 awtk-widget-slidable-row 并编译
+5. 获取 awtk-widget-slidable-row 并编译
 
 ```
 git clone https://github.com/zlgopen/awtk-widget-slidable-row.git
