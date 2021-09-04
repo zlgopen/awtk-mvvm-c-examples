@@ -8,9 +8,23 @@
     <normal border_color="#dddddd" />
   </style>
 </table_view>
+
 <confirmable_button>
   <style name="remove">
     <normal text_color="white" bg_color="#aa0000" />
     <over text_color="#ffffff" bg_color="#bb0000"/>
   </style>
 </confirmable_button>
+  
+<table_row>
+  <style name="even" border_color="#a0a0a0"  border="bottom" text_color="black">
+    <normal     bg_color="#f5f5f5" />
+    <pressed    bg_color="#f5f5f5" />
+    <over       bg_color="#f5f5f5" />
+  </style>
+  <style name="odd" border_color="#a0a0a0"  border="bottom" text_color="black">
+    <normal     bg_color="#eaeaea" />
+    <pressed    bg_color="#eaeaea" />
+    <over       bg_color="#eaeaea" />
+  </style>
+</table_row>
